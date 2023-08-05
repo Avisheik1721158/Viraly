@@ -6,13 +6,27 @@ import thunk from 'redux-thunk';
 
 import { reducers } from './reducers';
 import App from './App';
+import Media from './components/Media/Media';
 import './index.css';
-
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
-
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element:  <App />,
+  },
+  {
+    path: "/media",
+    element:  <Media />,
+  },
+]);
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+   
+    <RouterProvider router={router} />
   </Provider>,
   document.getElementById('root'),
 );
