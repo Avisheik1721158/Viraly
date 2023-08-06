@@ -2,15 +2,23 @@ import { Grid } from '@material-ui/core'
 
 import React, { useState } from 'react'
 
-import Posts from '../Posts/Posts';
+import TopPost from '../Posts/TopPost';
+import { useSelector } from 'react-redux';
+import {getRemainingPosts, getTopPosts} from '../../utils/dataFilters'
 
 
 
 const Media = () => {
-  const [currentId, setCurrentId] = useState(0);
+ 
+  const posts = useSelector((state) => state.posts);
+  const remainingPosts = getRemainingPosts(posts);
+  const topPosts = getTopPosts(posts);
+
+
   return (
    <Grid item xs={12} sm={7}>
-            <Posts setCurrentId={setCurrentId}></Posts>
+            <TopPost topPosts={topPosts}  remainingPosts={remainingPosts} ></TopPost>
+            
             </Grid> 
   )
 }
