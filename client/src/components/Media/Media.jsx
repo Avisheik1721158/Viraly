@@ -17,7 +17,7 @@ const Media = () => {
 
   return (
    <Grid item xs={12} sm={7}>
-            <TopPost topPosts={topPosts}  remainingPosts={remainingPosts} ></TopPost>
+            <TopPost topPosts={topPosts}  remainingPosts={remainingPosts} showRemainingPosts={true} ></TopPost>
             
             </Grid> 
   )

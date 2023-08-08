@@ -1,6 +1,7 @@
 const getRemainingPosts = (posts) => {
     const sortedPosts = [...posts].sort((a, b) => b.likeCount - a.likeCount);
-    return sortedPosts;
+    const remaining = sortedPosts.slice(3);
+    return remaining;
 }
 const getTopPosts = (posts) => {
     const sortedPosts = [...posts].sort((a, b) => b.likeCount - a.likeCount);
