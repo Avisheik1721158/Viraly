@@ -12,6 +12,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import About from './components/About/About';
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/media",
     element:  <Media />,
+  },
+  {
+    path: "/about",
+    element:  <About/>,
   },
 ]);
 ReactDOM.render(
